@@ -6,11 +6,6 @@ pipeline {
         APP_PORT = '8989'                         // Spring Boot port
     }
 
-    tools {
-        maven 'Maven3'   // Name configured in Jenkins Global Tool Config
-        jdk 'Java21'     // JDK 21 configured in Jenkins
-    }
-
     stages {
         stage('Checkout') {
             steps {
