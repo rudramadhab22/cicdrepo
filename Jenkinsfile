@@ -44,7 +44,7 @@ pipeline {
                 echo "Pushing Docker image to Docker Hub..."
                 script {
                     // Using the exact credential ID: 'dockerhubcred'
-                    docker.withRegistry('https://index.docker.io/v1/', 'dockerhubcred') {
+                    docker.withRegistry('https://index.docker.io/v1/', 'docker-hub-cred') {
                         docker.image("${IMAGE_NAME}:${env.BUILD_NUMBER}").push()
                         docker.image("${IMAGE_NAME}:latest").push()
                     }
